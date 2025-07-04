@@ -9,6 +9,7 @@ from tqdm import trange
 from visualization import plot_training_returns
 import optuna.visualization as vis
 from train_logger import load_log, save_log, append_trial, update_best
+import matplotlib.pyplot as plt
 
 
 import warnings
@@ -135,10 +136,85 @@ def objective(trial, load_best_value=False, num_episodes = 20):
 
     return avg_return
 
+def simulate_best_agent(data_path="my_data.csv"):
+    # Load best hyperparameters
+    log_data = load_log()
+    best_params = log_data["best"]["params"]
+
+    print("\n=== Simulating Best Agent with Parameters ===")
+    for k, v in best_params.items():
+        print(f"{k}: {v}")
+
+    # Initialize environment and agent
+    data = pd.read_csv(data_path)
+    obs_dim = 1
+    act_dim = 3
+
+    agent = PPOAgent(obs_dim, act_dim,
+                     gamma=best_params["gamma"],
+                     clip_epsilon=best_params["clip_epsilon"],
+                     lr=best_params["lr"])
+
+    env = Environment(data)
+    obs = env.reset()
+
+    actions_log = []
+    prices = []
+    profits = []
+    cumulative_profit = 0
+
+    for step in range(len(data)):
+        action, _, _ = agent.get_action(obs)
+
+        obs, reward, done, info = env.step(action)
+        price = data.iloc[step]["Close"]
+
+        action_str = ["HOLD", "BUY", "SELL"][action]
+        cumulative_profit += reward
+
+        print(f"Step {step}: Action = {action_str}, Price = {price:.2f}, Profit = {reward:.2f}, Total = {cumulative_profit:.2f}")
+
+        actions_log.append(action_str)
+        prices.append(price)
+        profits.append(cumulative_profit)
+
+        if done:
+            break
+
+    # Plotting
+    fig, ax1 = plt.subplots(figsize=(12, 6))
+
+    ax1.plot(prices, label="Stock Price", color="blue")
+    ax1.set_ylabel("Stock Price", color="blue")
+    ax1.tick_params(axis="y", labelcolor="blue")
+
+    ax2 = ax1.twinx()
+    ax2.plot(profits, label="Cumulative Profit", color="green")
+    ax2.set_ylabel("Cumulative Profit", color="green")
+    ax2.tick_params(axis="y", labelcolor="green")
+
+    plt.title("Stock Price vs. Agent Profit (Best Hyperparams)")
+    plt.grid(True)
+    plt.show()
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 if __name__ == "__main__":
     import argparse
+
+    simulate_best_agent()
+
 
     parser = argparse.ArgumentParser()
     parser.add_argument("--load_best_value", action="store_true", help="Load best parameters from log")
