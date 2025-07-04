@@ -1,0 +1,101 @@
+A Great Problem Here is the Understanding of his Requirement
+    he has written some code based on some assumptions (actions , selling policy ...)
+    Knowing what assumptions/boundaries for the problem sort of Explains the code itself.
+    After that is becomes essential to accurately write MY_PROBLEM_STATEMENT and LIST_OF_ASSUMPTIONS
+
+All this Work was an Implementation to the DQN philosophy of Building a Model
+
+
+
+Assumptions Taken:
+    1.The code operates under a simplified trading assumption where the agent’s actions are limited to a binary
+       buy/sell policy combined with a hold option. In this setup, the agent either buys one unit of stock, sells
+       one unit, or holds without any position change. The quantities are discrete and fixed, meaning the agent
+       does not decide how many units to buy or sell, nor does it consider available capital or risk management.
+       This assumption greatly simplifies the problem, allowing focus on learning the timing of buy and sell
+       decisions without dealing with complexities like portfolio sizing or fractional trades.
+
+    2. In this implementation, the entire trading decision process is based on a single parameter—namely, the stock
+        price at each time step. This simplification is intentional to reduce complexity and focus the learning problem
+        on timing buy and sell decisions without considering multiple market factors or additional features. By limiting
+        the input to just one parameter, the model and environment become more manageable for initial development and
+        experimentation. However, this design assumption also means the agent operates under a highly simplified
+        representation of the trading environment, which may limit its applicability to real-world scenarios where
+        many variables influence decision-making.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Notes:
+    1. In this mode, the accumulation of older older data are present if the data is not in the state.
+        And this is weird. But we can't know through bisection of the NN of what each part of the NN does.
+        I mean the way the human brain has different spot for different activities. We would remain clueless
+        of what's inside. We can numerically say they some Optuna hyperparameter tuning, can make it some how better.
+        But we can't diagnose that this NN needs more memory for this input size. We can't make an diagnoses based
+        on some observations
+
+    2. There are two main ways to assess whether a neural network has learned something meaningful: logical
+        experimental design and software-based explainability tools. The first involves scientific techniques
+        such as ablation (removing parts of the input or model), training on randomized data, and behavioral
+        evaluation — all of which help systematically test hypotheses about the model’s learning. The second
+        relies on explainable AI tools like SHAP or LIME, which provide visual or numerical insights into what
+        parts of the input influenced the model’s decisions. For developers, the scientific way of thinking is
+        more important, as it forms the foundation for structured reasoning, meaningful testing, and informed
+        improvement. Explainability tools are helpful, but they serve best as supportive instruments guided by
+        a solid experimental mindset.
+
+
+    3. There is a very tricky concept in the Timeseries data decision making. That is the certainty of taking choices.
+        And the relevant point (perspective/ reference / Science grade 7) you calculate the losses and wins. Lets say you
+        have sold a number of stocks today. You compare the value of money with the time you buyed them. But who knows what
+        happened tomorrow. If the price tomorrow increased by 10 fold, you will consider yourself out of luck because of such
+        a bad decision although is it mathematically profitable in every metric.
+
+    4. The Q-value is updated only for the action actually taken because the agent learns from its real experiences, not
+        hypothetical alternatives. At each step, the agent observes the reward from the chosen action and the estimated future
+        rewards, then updates the Q-value for that action to better predict its true value. Updating only the taken action
+        prevents the model from learning incorrect or unsupported information about actions it didn’t perform, ensuring
+        stable and focused learning based on what actually happened.
+
+
+Wrong Things in the Code
+    1. Some coding errors in syntax and some bad practices (Human Genuine code not Gpt 2020 code)
+
+    2. In the current implementation, the agent's training function is called after every single interaction with the environment,
+        once enough samples are collected in memory. This frequent training approach is inefficient and can lead to unstable learning
+        because the model updates are based on very limited and highly correlated recent data. Training after each step prevents the
+        model from benefiting fully from experience replay, which relies on sampling diverse and uncorrelated batches of past
+        experiences to improve stability and convergence. A more effective approach is to accumulate a batch of experiences over
+        multiple steps or episodes and then perform training by sampling random mini-batches from the replay memory. This method
+        reduces correlation among training samples, improves computational efficiency, and leads to more stable and reliable learning
+        outcomes. By moving the training phase outside the inner interaction loop, the agent can better leverage its collected experience
+        and optimize its learning process.
+
+    3. One of the key issues in the current code is that it does not follow the standard structure commonly used in reinforcement learning
+        frameworks such as OpenAI Gym. The Gym API defines a clear and consistent interface where the environment encapsulates the state, action space,
+        and reward logic, providing a step(action) method that returns the next state, reward, and episode termination flag. By not adhering to this standard,
+        the code mixes environment dynamics and reward calculations within the training loop, which reduces clarity, modularity, and maintainability.
+        Following the Gym API or a similar design pattern is considered best practice, especially for newcomers, because it enforces a clean separation
+        of concerns between the agent and environment, improves code readability, and enhances compatibility with existing RL libraries and tools. Adopting
+        such a structure early in development facilitates scalability and eases the integration of more advanced algorithms in the future.
+
+    4. Within this simplified policy, the selling logic is incorrectly implemented. The current code sells only one stock unit at a time by popping a single
+        price from the inventory list:This approach fails to account for scenarios where it might be optimal to sell the entire inventory at once rather than
+        incrementally. For instance, in real trading, an agent may choose to liquidate all holdings simultaneously based on market conditions or strategy. The
+        current code’s design can lead to suboptimal selling behavior and unrealistic trading simulations, as it restricts the agent to one-unit sells without
+        flexibility.To address this, the selling action should be redefined to allow selling all held units at once or to implement a policy that manages partial
+        sells with clear rules, reflecting a more realistic trading environment.
+
+    5. The environment works with python 3.10

@@ -1,0 +1,22 @@
+
+
+
+Num	Observation	Min	Max
+0	Cart Position	-2.4	2.4
+1	Cart Velocity	-Inf	Inf
+2	Pole Angle	~ -0.418 rad (-24°)	~ 0.418 rad (24°)
+3	Pole Velocity At Tip	-Inf	Inf
+
+
+In this specific case, Discrete(2) means the agent has two distinct, separate actions it can choose from.
+For the CartPole environment, these two actions typically correspond to:
+
+0: Pushing the cart to the left.
+1: Pushing the cart to the right.
+
+
+What do we need to search for.
+We need to create an algorith, to choose the action To get the most reward.
+
+We know here that we have no agent till now. The decision regarding the action is randomly chosen
+with the function sample()
