@@ -8,11 +8,7 @@ class Environment(gym.Env):
         super().__init__()
         self.data = data.reset_index(drop=True)
         self.current_step = 0
-
-        # Actions: 0 = hold, 1 = buy, 2 = sell
         self.action_space = spaces.Discrete(3)
-
-        # Observations: [current price]
         self.observation_space = spaces.Box(
             low=0, high=np.inf, shape=(1,), dtype=np.float32
         )

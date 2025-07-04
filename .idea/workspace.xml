@@ -5,12 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="59d4ad60-bca2-4a8d-88c8-4f4d009ffd93" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Code/Source_Code/Version_1/koussa.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Code/Source_Code/Version_1/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/Source_Code/examine_log.py" beforeDir="false" afterPath="$PROJECT_DIR$/Code/Source_Code/Version_1/examine_log.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/Source_Code/train.py" beforeDir="false" afterPath="$PROJECT_DIR$/Code/Source_Code/train.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/Source_Code/training_log.json" beforeDir="false" afterPath="$PROJECT_DIR$/Code/Source_Code/training_log.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Code/Source_Code/Version_1/stock_env.py" beforeDir="false" afterPath="$PROJECT_DIR$/Code/Source_Code/Version_1/stock_env.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Code/Source_Code/Version_2/environment.py" beforeDir="false" afterPath="$PROJECT_DIR$/Code/Source_Code/Version_2/environment.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -89,11 +86,11 @@
       <recent name="C:\Users\Abbass Zahreddine\Documents\GitHub\Task_1_Preparation\Code\Resource_3_analytics_vidhya\Edited_Version\Version_2" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Abbass Zahreddine\Documents\GitHub\Task_1_Preparation\Code\Source_Code\Version_1" />
       <recent name="C:\Users\Abbass Zahreddine\Documents\GitHub\Task_1_Preparation\Code\Source_Code" />
       <recent name="C:\Users\Abbass Zahreddine\Documents\GitHub\Task_1_Preparation\Code\Source_Code\data" />
       <recent name="C:\Users\Abbass Zahreddine\Documents\GitHub\Task_1_Preparation\Code\Resource_3_analytics_vidhya\Edited_Version\Beta" />
       <recent name="C:\Users\Abbass Zahreddine\Documents\GitHub\Task_1_Preparation\Code\Resource_3_analytics_vidhya\Edited_Version\Alfa" />
-      <recent name="C:\Users\Abbass Zahreddine\Documents\GitHub\Task_1_Preparation\Code\Resource_3_analytics_vidhya\Original_Version" />
     </key>
   </component>
   <component name="RunManager" selected="Python.koussa">
