@@ -22,10 +22,11 @@ obs_dim = 1
 act_dim = 3
 
 
-def objective(trial, load_best_value=False):
+def objective(trial, load_best_value=False, num_episodes = 20):
     log_data = load_log()
 
-    if load_best_value and log_data["best"] is not None:
+    # Load or sample hyperparameters
+    if load_best_value and log_data.get("best") is not None:
         best_params = log_data["best"]["params"]
         print(f"Using best saved params: {best_params}")
 
@@ -35,7 +36,6 @@ def objective(trial, load_best_value=False):
         rollout_len = best_params["rollout_len"]
         update_epochs = best_params["update_epochs"]
     else:
-        # Sample hyperparameters
         lr = trial.suggest_float("lr", 1e-5, 1e-3, log=True)
         gamma = trial.suggest_float("gamma", 0.90, 0.999)
         clip_epsilon = trial.suggest_float("clip_epsilon", 0.1, 0.3)
@@ -53,18 +53,21 @@ def objective(trial, load_best_value=False):
 
         observations = []
         actions = []
-        log_probs = []
+        log_probs_old = []
         rewards = []
         dones = []
         values = []
 
         for step in range(rollout_len):
+            # Get action and log probability from agent
             action, log_prob, _ = agent.get_action(obs)
+
             observations.append(obs)
             actions.append(action)
-            log_probs.append(log_prob)
+            log_probs_old.append(log_prob.detach())
 
             obs, reward, done, _ = env.step(action)
+
             rewards.append(reward)
             dones.append(done)
 
@@ -76,8 +79,8 @@ def objective(trial, load_best_value=False):
                 obs = env.reset()
 
         if len(rewards) == 0:
-            print("Warning: No steps were taken in this episode. Skipping trial.")
-            return -float("inf")  # Or some very bad return to let Optuna reject it
+            print("Warning: No steps taken, skipping trial.")
+            return -float("inf")
 
         with torch.no_grad():
             _, last_value = agent.model(torch.FloatTensor(obs).unsqueeze(0))
@@ -87,16 +90,23 @@ def objective(trial, load_best_value=False):
         observations = torch.FloatTensor(np.array(observations)).float()
         actions = torch.tensor(actions, dtype=torch.long)
 
-        if isinstance(log_probs_old, torch.Tensor):
-            log_probs_old = log_probs_old.detach().float()
-        else:
-            log_probs_old = torch.tensor(np.array(log_probs_old), dtype=torch.float32)
+        # Convert collected old log_probs to tensor safely
+        try:
+            log_probs_old = torch.stack(log_probs_old).float()
+        except Exception as e:
+            print(f"Error converting log_probs_old: {e}")
+            log_probs_old = torch.tensor([], dtype=torch.float32)
 
         returns = torch.tensor(np.array(returns), dtype=torch.float32)
         advantages = returns - values
         advantages = (advantages - advantages.mean()) / (advantages.std() + 1e-8)
 
-        agent.update(observations, actions, log_probs_old, returns, advantages, epochs=update_epochs)
+        # Sanity check for matching batch sizes before update
+        if (len(observations) == len(actions) == len(log_probs_old) == len(returns) == len(advantages)):
+            agent.update(observations, actions, log_probs_old, returns, advantages, epochs=update_epochs)
+        else:
+            print(f"Mismatch in batch sizes! obs: {len(observations)}, actions: {len(actions)}, log_probs_old: {len(log_probs_old)}, returns: {len(returns)}, advantages: {len(advantages)}")
+            return -float("inf")
 
         total_return = returns.sum().item()
         all_returns.append(total_return)
@@ -124,6 +134,7 @@ def objective(trial, load_best_value=False):
     save_log(log_data)
 
     return avg_return
+
 
 
 if __name__ == "__main__":
