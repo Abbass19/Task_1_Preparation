@@ -4,56 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="59d4ad60-bca2-4a8d-88c8-4f4d009ffd93" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/Task_1_Preparation.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Code/Resource_1_Python_RL/CartPole-v1/About.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Code/Resource_1_Python_RL/CartPole-v1/TensorBoardView.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Code/Resource_1_Python_RL/CartPole-v1/Testing.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Code/Resource_1_Python_RL/CartPole-v1/Testing_2.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Code/Resource_1_Python_RL/CartPole-v1/Training_Area.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Code/Resource_1_Python_RL/CartPole-v1/helper_methods.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Code/Resource_1_Python_RL/RL for Atari Game/Breakout.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Code/Resource_1_Python_RL/RL for Atari Game/script.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Code/Resource_2_Python/app.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Code/Resource_3_analytics_vidhya/Edited_Version/Version_1/About" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Code/Resource_3_analytics_vidhya/Edited_Version/Version_1/Version_1.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Code/Resource_3_analytics_vidhya/Edited_Version/Version_1/hdfc_bank_5years.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Code/Resource_3_analytics_vidhya/Edited_Version/Version_2/About" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Code/Resource_3_analytics_vidhya/Edited_Version/Version_2/Agent.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Code/Resource_3_analytics_vidhya/Edited_Version/Version_2/Basics.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Code/Resource_3_analytics_vidhya/Edited_Version/Version_2/Train.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Code/Resource_3_analytics_vidhya/Edited_Version/Version_2/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Code/Resource_3_analytics_vidhya/Edited_Version/Version_2/hdfc_bank_5years.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Code/Resource_3_analytics_vidhya/Edited_Version/Version_3/About" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Code/Resource_3_analytics_vidhya/Edited_Version/Version_3/Agent.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Code/Resource_3_analytics_vidhya/Edited_Version/Version_3/Basics.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Code/Resource_3_analytics_vidhya/Edited_Version/Version_3/Testing.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Code/Resource_3_analytics_vidhya/Edited_Version/Version_3/Training.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Code/Resource_3_analytics_vidhya/Edited_Version/Version_3/hdfc_bank_5years.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Code/Resource_3_analytics_vidhya/Edited_Version/Version_4/About" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Code/Resource_3_analytics_vidhya/Edited_Version/Version_4/Version_4.ipynb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Code/Resource_3_analytics_vidhya/Original_Version/Agent.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Code/Resource_3_analytics_vidhya/Original_Version/Basics.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Code/Resource_3_analytics_vidhya/Original_Version/TestingNotes" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Code/Resource_3_analytics_vidhya/Original_Version/Train.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Code/Resource_3_analytics_vidhya/Original_Version/Web_Example.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Code/Source_Code/data/Data_Preprocessing.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Code/Source_Code/data/data_extractor.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Code/Source_Code/my_data.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Code/Source_Code/ppo_agent.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Code/Source_Code/requirements.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Code/Source_Code/stock_env.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Code/Source_Code/train.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Code/Source_Code/train_logger.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Code/Source_Code/visualization.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Code/requirements.txt" afterDir="false" />
-    </list>
+    <list default="true" id="59d4ad60-bca2-4a8d-88c8-4f4d009ffd93" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -69,6 +20,12 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/Abbass19/Task_1_Preparation.git",
+    "accountId": "2eac65e9-1e00-4100-8076-f0ad5ee7398c"
+  }
+}]]></component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 7
 }</component>
