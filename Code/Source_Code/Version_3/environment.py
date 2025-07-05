@@ -28,12 +28,12 @@ class Environment(gym.Env):
         return self._get_observation()
 
     def _get_observation(self):
-        price = self.data.loc[self.current_step, 'CPCP']
+        price = self.data.loc[self.current_step, 'MPN5P']
         return np.array([price], dtype=np.float32)
 
     def step(self, action):
         done = False
-        price = self.data.loc[self.current_step, 'CPCP']
+        price = self.data.loc[self.current_step, 'MPN5P']
 
         prev_total_assets = self.cash + self.inventory * price  # Track before action
 
@@ -51,11 +51,11 @@ class Environment(gym.Env):
         self.current_step += 1
         done = self.current_step >= len(self.data) - 1
 
-        price = self.data.loc[self.current_step, 'CPCP']  # Get new price after moving forward
+        price = self.data.loc[self.current_step, 'MPN5P']  # Get new price after moving forward
         total_assets = self.cash + self.inventory * price
         profit_change = total_assets - prev_total_assets
 
-        reward = total_assets  # You may later revise this to be profit_change or something smarter
+        reward = profit_change    # You may later revise this to be profit_change or something smarter
 
         obs = self._get_observation()
         info = {
@@ -70,7 +70,7 @@ class Environment(gym.Env):
         return obs, reward, done, info
 
     def render(self, mode='human'):
-        price = self.data.loc[self.current_step, 'CPCP']
+        price = self.data.loc[self.current_step, 'MPN5P']
         total_assets = self.cash + self.inventory * price
         print(f"Step: {self.current_step}")
         print(f"Cash: {self.cash:.2f}")

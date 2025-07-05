@@ -10,7 +10,7 @@ from visualization import display_optuna_trials,display_agents_performance
 from ppo_agent import PPOAgent
 from environment import Environment
 from model_manager import *
-
+import collections
 
 csv_path = os.path.join(os.path.dirname(__file__), "models", "my_data.csv")
 data = pd.read_csv(csv_path)
@@ -133,12 +133,6 @@ def hyperparameter_search(load_best_value=False, n_trials=25, num_episodes=20, v
 
     return study.best_trial.params, study.best_trial.value
 
-
-
-
-import torch
-import numpy as np
-import collections
 
 def train_one_agent(report_number= "", no_episodes=60 ):
     """

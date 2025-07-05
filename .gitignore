@@ -1,3 +1,4 @@
 # Ignore virtual environments
 .venv/
 .venv-old/
+**/agent_reports/
