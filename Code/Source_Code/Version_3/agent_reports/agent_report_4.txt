@@ -1,0 +1,48 @@
+
+==================== AGENT PERFORMANCE REPORT ====================
+Used Hyperparameters: {'lr': 8.916327923755953e-05, 'gamma': 0.9946875280401508, 'clip_epsilon': 0.1866912388779814, 'rollout_len': 512, 'update_epochs': 13}
+
+--- Training Phase ---
+Total Profit: 40.41
+Avg Profit/Step: 0.0164
+Max Gain: 17.24
+Max Loss: -7.28
+Steps: 2471
+Positive Steps: 460
+Negative Steps: 419
+Neutral Steps: 1592
+Buy: 325 times (13.15%)
+Sell: 1206 times (48.81%)
+Hold: 940 times (38.04%)
+Final Inventory: 0
+Final Cash: 10131.10
+
+--- Validation Phase ---
+Total Profit: 0.00
+Avg Profit/Step: 0.0000
+Max Gain: 0.00
+Max Loss: 0.00
+Steps: 617
+Positive Steps: 0
+Negative Steps: 0
+Neutral Steps: 617
+Buy: 0 times (0.00%)
+Sell: 599 times (97.08%)
+Hold: 18 times (2.92%)
+Final Inventory: 0
+Final Cash: 10000.00
+
+--- Testing Phase ---
+Total Profit: 0.00
+Avg Profit/Step: 0.0000
+Max Gain: 0.00
+Max Loss: 0.00
+Steps: 617
+Positive Steps: 0
+Negative Steps: 0
+Neutral Steps: 617
+Buy: 0 times (0.00%)
+Sell: 607 times (98.38%)
+Hold: 10 times (1.62%)
+Final Inventory: 0
+Final Cash: 10000.00
