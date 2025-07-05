@@ -85,10 +85,6 @@ def update_best(result, params):
         return True
     return False
 
-def load_log():
-    """Return the full in-memory log data."""
-    _ensure_loaded()
-    return _log_data
 
 def save_log():
     """Save the current in-memory log data to file."""

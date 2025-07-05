@@ -1,5 +1,8 @@
+import os
+
 import optuna
 import numpy as np
+import pandas as pd
 import torch
 from log_api import load_log, save_log, save_hyper_train, update_best, read_best_hyperparameter
 from visualization import display_optuna_trials,display_agents_performance
@@ -7,8 +10,9 @@ from ppo_agent import PPOAgent
 from environment import Environment
 
 
+csv_path = os.path.join(os.path.dirname(__file__), "my_data.csv")
+data = pd.read_csv(csv_path)
 
-data = ...  # Your dataframe with stock data
 obs_dim = 1
 act_dim = 3
 
@@ -156,9 +160,7 @@ def train_one_agent(no_episodes=60):
         }
 
     # Create environments
-    training_env = Environment(data, env_type="train")
-    validation_env = Environment(data, env_type="val")
-    testing_env = Environment(data, env_type="test")
+    training_env , validation_env, testing_env= Environment.with_splits_time_series(data)
 
     # Initialize agent with best hyperparameters
     agent = PPOAgent(
