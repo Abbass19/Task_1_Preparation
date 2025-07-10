@@ -33,11 +33,9 @@ class Environment(gym.Env):
 
     def step(self, action):
         done = False
-        price = self.data.loc[self.current_step, 'MPN5P']
-
+        price = self._get_observation()
         prev_total_assets = self.cash + self.inventory * price  # Track before action
 
-        # Apply action
         if action == 1:  # Buy
             if self.cash >= price:
                 self.inventory += 1
@@ -46,31 +44,28 @@ class Environment(gym.Env):
             if self.inventory > 0:
                 self.inventory -= 1
                 self.cash += price
-        # Hold = do nothing
 
         self.current_step += 1
         done = self.current_step >= len(self.data) - 1
-
-        price = self.data.loc[self.current_step, 'MPN5P']  # Get new price after moving forward
+        price = self._get_observation()
         total_assets = self.cash + self.inventory * price
         profit_change = total_assets - prev_total_assets
-
-        reward = profit_change    # You may later revise this to be profit_change or something smarter
-
+        reward = profit_change
         obs = self._get_observation()
+
         info = {
             'step': self.current_step,
             'inventory': self.inventory,
             'cash': self.cash,
             'price': price,
             'profit_change': profit_change,
-            'action_taken': action  # ✅ this
+            'action_taken': action
         }
 
         return obs, reward, done, info
 
     def render(self, mode='human'):
-        price = self.data.loc[self.current_step, 'MPN5P']
+        price = self._get_observation()
         total_assets = self.cash + self.inventory * price
         print(f"Step: {self.current_step}")
         print(f"Cash: {self.cash:.2f}")
@@ -82,14 +77,13 @@ class Environment(gym.Env):
     def with_splits_time_series(cls, data: pd.DataFrame, n_splits=5):
 
         tscv = TimeSeriesSplit(n_splits=n_splits)
-
         splits = list(tscv.split(data))
-
         if n_splits < 3:
             raise ValueError("n_splits must be at least 3 to get train/val/test splits.")
 
         train_val_idx, test_idx = splits[-1]
         train_idx, val_idx = splits[-2]
+
         train_data = data.iloc[train_idx].reset_index(drop=True)
         val_data = data.iloc[val_idx].reset_index(drop=True)
         test_data = data.iloc[test_idx].reset_index(drop=True)

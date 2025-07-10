@@ -6,7 +6,7 @@ from torch.distributions import Categorical
 
 class ActorCritic(nn.Module):
     def __init__(self, obs_dim, act_dim):
-        super(ActorCritic, self).__init__()
+        super().__init__()
 
         # Shared base
         self.fc = nn.Sequential(
@@ -74,3 +74,5 @@ class PPOAgent:
 
     def save(self, path):
         torch.save(self.model.state_dict(), path)
+
+

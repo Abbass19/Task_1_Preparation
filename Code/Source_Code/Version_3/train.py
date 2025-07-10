@@ -218,7 +218,7 @@ def train_one_agent(report_number= "", no_episodes=60 ):
         agent.update(obs_tensor, actions_tensor, log_probs_tensor, returns_tensor, advantages,
                      epochs=best_params["update_epochs"])
 
-        print(f"Train_One_Agent Speaking : Episode {episode + 1} finished. Total return: {total_return:.2f}")
+        print(f"Train_One_Agent Speaking : Episode {episode + 1} finished. Total return: {total_return}")
 
     print("✅ Training completed. Evaluating agent...")
 
@@ -236,12 +236,12 @@ def train_one_agent(report_number= "", no_episodes=60 ):
 
             profit_change = info.get("profit_change", 0)
             action_str = ["Hold", "Buy", "Sell"][action]
-            print(f"Step {step_count + 1}: Action: {action_str}, Profit change: {profit_change:.2f}, Inventory: {info.get('inventory', 'N/A')}")
+            print(f"Step {step_count + 1}: Action: {action_str}, Profit change: {profit_change}, Inventory: {info.get('inventory', 'N/A')}")
             profit_changes.append(profit_change)
             step_count += 1
 
         total_profit = sum(profit_changes)
-        print(f"    Train_One_Agent Speaking : Finished {label}. Total profit: {total_profit:.2f} over {step_count} steps.")
+        print(f"    Train_One_Agent Speaking : Finished {label}. Total profit: {total_profit} over {step_count} steps.")
         return profit_changes
 
     train_profit_changes = evaluate(training_env, label="Training")
@@ -255,10 +255,10 @@ def train_one_agent(report_number= "", no_episodes=60 ):
 
     def summarize(label, profits, action_counts, steps, profit_stats, inv, cash):
         report_lines.append(f"\n--- {label} Phase ---")
-        report_lines.append(f"Total Profit: {sum(profits):.2f}")
-        report_lines.append(f"Avg Profit/Step: {sum(profits)/(steps or 1):.4f}")
-        report_lines.append(f"Max Gain: {max(profit_stats, default=0):.2f}")
-        report_lines.append(f"Max Loss: {min(profit_stats, default=0):.2f}")
+        report_lines.append(f"Total Profit: {sum(profits)}")
+        report_lines.append(f"Avg Profit/Step: {sum(profits)/(steps or 1)}")
+        report_lines.append(f"Max Gain: {max(profit_stats, default=0)}")
+        report_lines.append(f"Max Loss: {min(profit_stats, default=0)}")
         report_lines.append(f"Steps: {steps}")
         report_lines.append(f"Positive Steps: {sum(p > 0 for p in profit_stats)}")
         report_lines.append(f"Negative Steps: {sum(p < 0 for p in profit_stats)}")
@@ -266,9 +266,9 @@ def train_one_agent(report_number= "", no_episodes=60 ):
         for act in ["Buy", "Sell", "Hold"]:
             count = action_counts.get(act, 0)
             percent = 100 * count / steps if steps else 0
-            report_lines.append(f"{act}: {count} times ({percent:.2f}%)")
+            report_lines.append(f"{act}: {count} times ({percent}%)")
         report_lines.append(f"Final Inventory: {inv}")
-        report_lines.append(f"Final Cash: {cash:.2f}")
+        report_lines.append(f"Final Cash: {cash}")
 
     def silent_eval(env):
         obs = env.reset()
@@ -332,9 +332,6 @@ def train_one_agent(report_number= "", no_episodes=60 ):
     return [train_profit_changes, val_profit_changes, test_profit_changes]
 
 
-
-
-
 def train_multiple_agents(num_agents, episodes_per_agent):
     """
     Trains multiple agents sequentially by calling train_one_agent,
@@ -358,3 +355,4 @@ def train_multiple_agents(num_agents, episodes_per_agent):
     display_agents_performance(all_agents_data)  # Assuming you have this visualization function
 
     return all_agents_data
+

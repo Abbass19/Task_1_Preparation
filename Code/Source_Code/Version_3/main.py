@@ -8,16 +8,21 @@ def main():
     model_manager = ModelManager(model_class=PPOAgent)
     model_manager.display_info()
     initialize_log_if_missing()
+    train_one_agent("Test", no_episodes=10)
 
 
 
     # Step 3: Display current saved models (if any)
-    model_manager.display_info()
     # hyperparameter_search( n_trials=5, num_episodes=40,visualization=False)
-    train_one_agent(4, no_episodes=20)
+    for k in range(20):
+        print("-------------------------------------------------------------------------------------------")
+        print(f"This is the {k}th Iterations")
+        train_one_agent(str(k), no_episodes=10)
 
 
 
 
 if __name__ == "__main__":
+
+
     main()

@@ -20,14 +20,39 @@ def initialize_log_if_missing():
         print("log.json already exists.")
 
 
-def _load_log():
-    with open(LOG_FILE_PATH, "r") as f:
-        return json.load(f)
+import json
+import os
 
+def _load_log():
+    if not os.path.exists(LOG_FILE_PATH):
+        return {}
+
+    try:
+        with open(LOG_FILE_PATH, "r") as f:
+            return json.load(f)
+    except json.JSONDecodeError:
+        print("⚠️ Warning: Log file is corrupted or incomplete. Returning empty log.")
+        return {}
+
+
+import numpy as np
+import json
+
+def convert_ndarrays(obj):
+    if isinstance(obj, np.ndarray):
+        return obj.tolist()
+    elif isinstance(obj, dict):
+        return {k: convert_ndarrays(v) for k, v in obj.items()}
+    elif isinstance(obj, list):
+        return [convert_ndarrays(i) for i in obj]
+    else:
+        return obj
 
 def _save_log(data):
+    safe_data = convert_ndarrays(data)
     with open(LOG_FILE_PATH, "w") as f:
-        json.dump(data, f, indent=2)
+        json.dump(safe_data, f, indent=2)
+
 
 
 def save_hyperparameter_result(result_entry: dict):
@@ -60,6 +85,9 @@ def save_agent_result(performance_entry: dict):
     }
     """
     log = _load_log()
+
+    if "agent_performance" not in log:
+        log["agent_performance"] = []
     log["agent_performance"].append(performance_entry)
     _save_log(log)
 

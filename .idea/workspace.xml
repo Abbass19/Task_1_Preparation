@@ -5,12 +5,29 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="59d4ad60-bca2-4a8d-88c8-4f4d009ffd93" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Code/Source_Code/Version_3/batch_report_analyzer.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Code/Source_Code/Version_3/spare/train.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Code/Source_Code/Version_4/API_Description" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Code/Source_Code/Version_4/About" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Code/Source_Code/Version_4/batch_report_analyzer.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Code/Source_Code/Version_4/environment.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Code/Source_Code/Version_4/log_api.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Code/Source_Code/Version_4/main.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Code/Source_Code/Version_4/metrics.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Code/Source_Code/Version_4/model_manager.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Code/Source_Code/Version_4/models/log.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Code/Source_Code/Version_4/models/my_data.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Code/Source_Code/Version_4/ppo_agent.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Code/Source_Code/Version_4/spare/train.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Code/Source_Code/Version_4/train.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Code/Source_Code/Version_4/visualization.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/Resource_3_analytics_vidhya/Original_Version/TestingNotes" beforeDir="false" afterPath="$PROJECT_DIR$/Code/Resource_3_analytics_vidhya/Original_Version/About" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/Source_Code/Version_3/agent_reports/agent_report_4.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Code/Source_Code/Version_3/agent_reports/agent_report_4.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Code/Source_Code/Version_3/agent_reports/agent_report_4.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Code/Source_Code/Version_3/environment.py" beforeDir="false" afterPath="$PROJECT_DIR$/Code/Source_Code/Version_3/environment.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Code/Source_Code/Version_3/log_api.py" beforeDir="false" afterPath="$PROJECT_DIR$/Code/Source_Code/Version_3/log_api.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Code/Source_Code/Version_3/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Code/Source_Code/Version_3/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Code/Source_Code/Version_3/models/log.json" beforeDir="false" afterPath="$PROJECT_DIR$/Code/Source_Code/Version_3/models/log.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Code/Source_Code/Version_3/ppo_agent.py" beforeDir="false" afterPath="$PROJECT_DIR$/Code/Source_Code/Version_3/ppo_agent.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Code/Source_Code/Version_3/train.py" beforeDir="false" afterPath="$PROJECT_DIR$/Code/Source_Code/Version_3/train.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -69,27 +86,29 @@
     "Python.Training_Area.executor": "Run",
     "Python.Web_Example.executor": "Run",
     "Python.app.executor": "Run",
+    "Python.batch_report_analyzer.executor": "Run",
     "Python.examine_log.executor": "Run",
     "Python.koussa.executor": "Run",
     "Python.main (1).executor": "Run",
     "Python.main.executor": "Run",
+    "Python.train (1).executor": "Run",
     "Python.train.executor": "Run",
     "Python.visualization.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "master",
     "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/Users/Abbass Zahreddine/Documents/GitHub/Task_1_Preparation/Code/Source_Code/Version_3/models",
+    "last_opened_file_path": "C:/Users/Abbass Zahreddine/Documents/GitHub/Task_1_Preparation/Code/Source_Code/Version_4/metrics.py",
     "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Abbass Zahreddine\Documents\GitHub\Task_1_Preparation\Code\Source_Code\Version_4" />
+      <recent name="C:\Users\Abbass Zahreddine\Documents\GitHub\Task_1_Preparation\Code\Source_Code\Version_3\spare" />
       <recent name="C:\Users\Abbass Zahreddine\Documents\GitHub\Task_1_Preparation\Code\Source_Code\Version_3\models" />
       <recent name="C:\Users\Abbass Zahreddine\Documents\GitHub\Task_1_Preparation\Code\Source_Code\Version_3" />
       <recent name="C:\Users\Abbass Zahreddine\Documents\GitHub\Task_1_Preparation\Code\Source_Code\Version_2\models" />
-      <recent name="C:\Users\Abbass Zahreddine\Documents\GitHub\Task_1_Preparation\Code\Source_Code\Version_2" />
-      <recent name="C:\Users\Abbass Zahreddine\Documents\GitHub\Task_1_Preparation\Code\Source_Code\data" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Abbass Zahreddine\Documents\GitHub\Task_1_Preparation\Code\Source_Code\Version_1" />
@@ -99,8 +118,8 @@
       <recent name="C:\Users\Abbass Zahreddine\Documents\GitHub\Task_1_Preparation\Code\Resource_3_analytics_vidhya\Edited_Version\Alfa" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.main (1)">
-    <configuration name="examine_log" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Python.main">
+    <configuration name="batch_report_analyzer" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Task_1_Preparation" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -109,33 +128,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Code/Source_Code" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Code/Source_Code/Version_3" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Code/Source_Code/examine_log.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="koussa" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="Task_1_Preparation" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Code/Source_Code" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Code/Source_Code/koussa.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Code/Source_Code/Version_3/batch_report_analyzer.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -166,6 +163,50 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Task_1_Preparation" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Code/Source_Code/Version_4" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Code/Source_Code/Version_4/main.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="train (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Task_1_Preparation" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Code/Source_Code/Version_4" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Code/Source_Code/Version_4/train.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="train" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Task_1_Preparation" />
       <option name="ENV_FILES" value="" />
@@ -188,42 +229,20 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="visualization" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="Task_1_Preparation" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Code/Source_Code" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="C:\Users\Abbass Zahreddine\Documents\GitHub\Task_1_Preparation\Code\Source_Code\Version_1\visualization.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <list>
+      <item itemvalue="Python.main" />
+      <item itemvalue="Python.train (1)" />
+      <item itemvalue="Python.batch_report_analyzer" />
       <item itemvalue="Python.main (1)" />
-      <item itemvalue="Python.koussa" />
-      <item itemvalue="Python.visualization" />
-      <item itemvalue="Python.examine_log" />
       <item itemvalue="Python.train" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.main" />
+        <item itemvalue="Python.train (1)" />
+        <item itemvalue="Python.batch_report_analyzer" />
         <item itemvalue="Python.main (1)" />
         <item itemvalue="Python.train" />
-        <item itemvalue="Python.koussa" />
-        <item itemvalue="Python.visualization" />
-        <item itemvalue="Python.examine_log" />
       </list>
     </recent_temporary>
   </component>
